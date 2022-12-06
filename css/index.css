@@ -81,7 +81,7 @@ body {
   font-family: "Roboto Flex", sans-serif;
   font-size: 30px;
   line-height: 21px;
-  font-weight: 300;
+  font-weight: 400;
 }
 @media screen and (max-width: 2560px) {
   body {
@@ -114,6 +114,16 @@ body {
     margin-bottom: 20px;
     line-height: 45px;
   }
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: #fff;
+  background: #00368F;
+}
+
+::selection {
+  color: #fff;
+  background: #00368F;
 }
 
 header {
@@ -316,11 +326,22 @@ header .secondary li a, header .secondary li .search {
   align-items: center;
   justify-content: center;
 }
+header .secondary li a .hover, header .secondary li a .default, header .secondary li .search .hover, header .secondary li .search .default {
+  width: 20px !important;
+  display: block;
+  margin-left: 8px;
+}
+header .secondary li a .hover, header .secondary li .search .hover {
+  display: none;
+}
 header .secondary li a:hover, header .secondary li .search:hover {
   color: #00368F;
 }
-header .secondary li a img, header .secondary li .search img {
-  margin-left: 8px;
+header .secondary li a:hover .hover, header .secondary li .search:hover .hover {
+  display: initial;
+}
+header .secondary li a:hover .default, header .secondary li .search:hover .default {
+  display: none;
 }
 header .secondary .icon {
   width: 22px;
@@ -584,6 +605,7 @@ header nav.mb ul .close-accordion {
   align-items: center;
   justify-content: space-evenly;
   padding-top: 25px;
+  padding-bottom: 25px;
 }
 .acc-drawer .social a {
   display: flex;
@@ -919,20 +941,134 @@ footer {
 footer .nav {
   padding: 40px 200px;
 }
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 2560px) {
   footer .nav {
     padding-left: 100px;
     padding-right: 100px;
   }
 }
-footer .nav ul {
+@media screen and (max-width: 1200px) {
+  footer .nav {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+footer .nav a {
+  color: #fff;
+}
+footer .nav a:hover {
+  text-decoration: underline;
+}
+footer .nav > ul {
   display: flex;
 }
-footer .nav ul li h3 {
+footer .nav > ul > li.nav-list {
+  width: 200px;
+}
+footer .nav > ul > li.address {
+  width: 300px;
+}
+footer .nav > ul > li.address strong {
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 22px;
+}
+footer .nav > ul > li.address p {
+  margin-bottom: 0;
+}
+footer .nav > ul > li h3 {
   border-bottom: 1px solid #fff;
-  padding-right: 130px;
+  padding-bottom: 12px;
   font-size: 20px;
   font-weight: 600;
+}
+@media screen and (max-width: 1440px) {
+  footer .nav > ul > li h3 {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  footer .nav > ul > li h3 {
+    font-size: 16px;
+  }
+}
+footer .nav > ul > li ul {
+  margin-top: 22px;
+}
+footer .nav > ul > li li {
+  margin-bottom: 22px;
+}
+footer .nav > ul .logo {
+  background: #fff;
+  display: inline-block;
+  width: 9vw;
+  box-sizing: content-box;
+  padding: 8px 12px;
+  margin-top: 55px;
+}
+footer .nav > ul .logo img {
+  width: 100%;
+  display: block;
+}
+footer .nav > ul .social {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 16px;
+}
+footer .nav > ul .social img {
+  display: block;
+  width: 35px;
+}
+@media screen and (max-width: 991px) {
+  footer .nav.mb {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+footer .nav.mb > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+footer .nav.mb > ul > li {
+  width: 50%;
+}
+footer .nav.mb > ul > li ul {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+footer .nav.mb > ul > li ul li {
+  margin-bottom: 15px;
+}
+footer .nav.mb > ul .address {
+  width: 100%;
+}
+footer .nav.mb > ul .address strong {
+  margin-top: 0px;
+}
+footer .nav.mb > ul .address p {
+  margin-top: 8px;
+}
+footer .nav.mb > ul .hotline {
+  align-self: flex-end;
+}
+footer .nav.mb .primary {
+  font-size: 16px;
+  text-decoration: underline;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+footer .copyright {
+  text-align: center;
+  padding: 21px 0;
+  border-top: 1px solid #fff;
+}
+footer .copyright a {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .sec-dealer-info {
