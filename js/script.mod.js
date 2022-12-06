@@ -65,7 +65,7 @@ accIcon.addEventListener('click', accordFun)
 closeAccord.addEventListener('click', accordFun)
 
 // fullwh
-if (window.innerWidth <= 991) {
+if (window.innerWidth > 991) {
   document.querySelectorAll('.full-wh').forEach(item => {
     item.style.height = (window.innerHeight - document.querySelector('header').offsetHeight) + 'px'
   })
