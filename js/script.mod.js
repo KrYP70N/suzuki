@@ -84,3 +84,20 @@ $('.home-model-slider ul').slick({
     },
   ]
 })
+
+// home news text splitting
+const textSplitting = (count = 80) => {
+  const homeNewTitles = document.querySelectorAll('.home-news .new-title')
+  homeNewTitles.forEach(item => {
+    let txt = item.innerHTML
+    console.log(txt.length)
+    if (txt.length > 80) {
+      item.innerHTML = txt.slice(0, count) + '...'
+    }
+  })
+}
+if (window.innerWidth <= 1180 && window.innerWidth >= 992) textSplitting()
+
+if (window.innerWidth <= 767) textSplitting()
+
+if (window.innerWidth <= 600) textSplitting(30)
