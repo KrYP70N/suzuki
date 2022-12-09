@@ -101,3 +101,18 @@ if (window.innerWidth <= 1180 && window.innerWidth >= 992) textSplitting()
 if (window.innerWidth <= 767) textSplitting()
 
 if (window.innerWidth <= 600) textSplitting(30)
+
+// animate 
+let animate_nodes = document.querySelectorAll(".animate-trigger")
+const animate_fun = _ => {
+  animate_nodes.forEach(item => {
+    item.setAttribute('offset', item.offsetTop)
+    if (item.offsetTop <= window.scrollY + (Number(item.getAttribute('offset-range') || (window.innerHeight - 50)))) {
+      item.classList.remove('animate-trigger')
+    }
+  })
+}
+
+animate_fun()
+
+window.addEventListener('scroll', animate_fun)
